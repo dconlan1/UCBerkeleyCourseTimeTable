@@ -56,32 +56,27 @@ function retrieveData() {
     db.collection("ucbBerkeleyClass").get().then((querySnapshot) => {
         $('#train-rows').html('')
         querySnapshot.forEach((doc) => {
-            console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
+            // console.log(`${doc.id} => ${JSON.stringify(doc.data())}`);
             var returnedDoc = doc.data();
             $("#template").clone().attr("id", doc.id).appendTo("#train-rows");
             $(`#${doc.id} .train-number`).html(returnedDoc.trainNumber);
             $(`#${doc.id} .train-name`).html(returnedDoc.trainName);
             $(`#${doc.id} .destination`).html(returnedDoc.destination);
             $(`#${doc.id} .frequency`).html(returnedDoc.frequency);
+           
+           
             var currentTime = moment();
-
-//document.getElementByID("my-time").innerHTML = currentTime;
-
-            var firstDeparture = moment(returnedDoc.firstDeparture)
+            var firstDeparture = moment(returnedDoc.firstDeparture, 'hh:mm A')
             var difference = currentTime.diff(firstDeparture, "minutes");
-            console.log(currentTime);
-            console.log(firstDeparture);
-            console.log(diff);
-            $(`#${doc.id} .next-arrival`).html("something");
-            $(`#${doc.id} .minutes-away`).html("anything");
+            var remainder = difference % returnedDoc.frequency;
+            var minutesTilTrain = returnedDoc.frequency - remainder;
+            var nextArrival = currentTime.add(minutesTilTrain, "minutes");
+            $(`#${doc.id} .next-arrival`).html(nextArrival.format('hh:mm A'));
+            $(`#${doc.id} .minutes-away`).html(minutesTilTrain);
         });
     });
 }
-var currentTime = moment();
-console.log('CURRENT TIME: ' + moment(currentTime).format('hh:mm:ss A'));
-view.updateCurrentTime();
-	setInterval(function() {view.updateCurrentTime()}, 1000);
-//updateCurrentTime: () => {
-    $('.currentTime').text(moment().format('h:mm:ss A'))
-//}
 
+setInterval(function() {
+    $('.myTime').text(moment().format('h:mm:ss A'));
+}, 1000);
