@@ -88,6 +88,7 @@
     .myTime {
       float: center;
       text-align: center;
+      color: white;
     }
   body {
     font-size: 1rem;
