@@ -11,6 +11,6 @@ It synchronizes the user data with a global time management application called m
 User generated data is pushed to the Google Firebase database, stored, and then retrieved
 within the data table. 
 
-Use it here: https://dconlan1.github.io/UCBerkeleyCourseTimeTable/
+Use it here: https://dconlan1.github.io/UCBerkeleyCourseTimeTable/trainschedule.html
 
 #This shows real time time managment. 
