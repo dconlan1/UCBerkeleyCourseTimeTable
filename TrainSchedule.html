@@ -20,7 +20,7 @@
         <!-- Jumbotron -->
         <div class="jumbotron">
             <h1 class="text-center">Train Schedule</h1>
-            <h2 class="currentTime"></h2>
+            <h2 class="myTime"></h2>
         </div>
         <div class="row">
             <div class="col-lg-12">
@@ -71,23 +71,23 @@
                         <form role="form">
                             <div class="form-group row">
                                 <label for="train-name">Train Name:</label>
-                                <input class="form-control" id="train-name" type="text">
+                                <input class="form-control" id="train-name" placeholder="Train Name" type="text">
                             </div>
                             <div class="form-group row">
                                 <label for="destination">Destination:</label>
-                                <input class="form-control" id="destination" type="text">
+                                <input class="form-control" id="destination" placeholder="Destination"type="text">
                             </div>
                             <div class="form-group row">
                                 <label for="first-departure">First Departure:</label>
-                                <input class="form-control" id="first-departure" type="text">
+                                <input class="form-control" id="first-departure" placeholder="First Departure" type="text">
                             </div>
                             <div class="form-group row">
                                 <label for="frequency">Frequency:</label>
-                                <input class="form-control" id="frequency" type="text">
+                                <input class="form-control" id="frequency" placeholder="Frequency" type="text">
                             </div>
                             <div class="form-group row">
-                                <label for="train-number">Train Number#:</label>
-                                <input class="form-control" id="train-number">
+                                <label for="train-number">Train Number:</label>
+                                <input class="form-control" id="train-number" placeholder="Train Number" type="text" >
                             </div>
                             <button class="btn btn-default" id="add-train" type="submit">Submit</button>
                         </form>
@@ -100,8 +100,8 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase.js"></script>
     <script src="https://code.jquery.com/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="assets/javascript/train-table.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/train-table.js"></script>
 </body>
 
 </html>
