@@ -4,7 +4,7 @@ Technology used in this project.
 -Ajax
 -jQuery
 -Firebase
--Moment. 
+-Momentjs. 
 
 This application takes user generated data and includes it within the main data table.
 It synchronizes the user data with a global time management application called moment.js. 
@@ -13,4 +13,6 @@ within the data table.
 
 Use it here: https://dconlan1.github.io/UCBerkeleyCourseTimeTable/TrainSchedule.html
 
-#This shows real time time managment. 
+#This shows real-time time managment. 
+
+Learning the interplay between momentjs, javascript elements, and firestore was a very interesting exercise. 
